@@ -16,6 +16,20 @@ export class App extends Component {
   };
 
   addContact = data => {
+    const hasNameDuplicate = this.state.contacts.some(
+      contact => contact.name === data.name
+    );
+    const hasNamberDuplicate = this.state.contacts.some(
+      contact => contact.number === data.number
+    );
+    if (hasNameDuplicate) {
+      alert(` ${data.name} is already in contacts`);
+      return;
+    }
+    if (hasNamberDuplicate) {
+      alert(` ${data.number} is already in contacts`);
+      return;
+    }
     const newContact = {
       ...data,
       id: nanoid(),
