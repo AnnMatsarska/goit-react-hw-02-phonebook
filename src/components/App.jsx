@@ -4,6 +4,8 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 
+import { Container } from './Container.styled';
+
 export class App extends Component {
   state = {
     contacts: [
@@ -65,7 +67,7 @@ export class App extends Component {
 
   render() {
     return (
-      <>
+      <Container>
         <h1>Phonebook</h1>
         <ContactForm addContact={this.addContact} />
         <h2>Contacts</h2>
@@ -74,7 +76,7 @@ export class App extends Component {
           contacts={this.contactsFilter()}
           handleDelete={this.deleteContact}
         />
-      </>
+      </Container>
     );
   }
 }
