@@ -1,4 +1,5 @@
-import { List, Item, Button } from './ContactList.styled';
+import { List, Item } from './ContactList.styled';
+import { ContactItem } from '../ContactItem/ContactItem';
 
 export const ContactList = ({ contacts, handleDelete }) => {
   return (
@@ -6,13 +7,20 @@ export const ContactList = ({ contacts, handleDelete }) => {
       {contacts.map(({ id, name, number }) => {
         return (
           <Item key={id}>
-            {name}: {number}
-            <Button type="button" onClick={() => handleDelete(id)}>
-              Delete
-            </Button>
+            <ContactItem
+              name={name}
+              number={number}
+              id={id}
+              handleDelete={handleDelete}
+            />
           </Item>
         );
       })}
     </List>
   );
 };
+
+// {name}: {number}
+//             <Button type="button" onClick={() => handleDelete(id)}>
+//               Delete
+//             </Button>
