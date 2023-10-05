@@ -19,8 +19,3 @@ export const ContactList = ({ contacts, handleDelete }) => {
     </List>
   );
 };
-
-// {name}: {number}
-//             <Button type="button" onClick={() => handleDelete(id)}>
-//               Delete
-//             </Button>
